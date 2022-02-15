@@ -1,10 +1,59 @@
 # 更新日志
+### 4.5.6 | 2022.02.12
+- 歌单封面上传接口缺失参数时返回状态码修正
+
+### 4.5.6 | 2022.02.09
+- 新增重复昵称检测接口 [#1469](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1469)
+
+### 4.5.5 | 2022.02.09
+- 搜索接口支持搜索声音
+
+### 4.5.4 | 2022.02.09
+- 修复云盘上传无法获取到文件的问题
+
+### 4.5.3 | 2022.02.04
+- 增加签到进度接口 [#1462](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1462)
+
+### 4.5.2 | 2022.01.28
+- 入口文件优化 [#1457](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1457)
+
+### 4.5.0 | 2022.01.27
+
+- app.js 重构[#1453](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1453)
+
+- 修复 pkg 打包问题
+
+### 4.3.0 | 2022.01.22
+
+- fix: 发送/删除评论、点赞失败 [#1446](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1446)
+
+- 增加二进制文件 node 标识 [#1440](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1440)
+
+- 获取歌单所有歌曲增加 offset 偏移量设置[#1435](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1435)
+
+### 4.2.0 | 2021.11.23
+
+- 合并相同接口(发送文本动态,使用`/share/resource`接口代替)；增加歌手视频接口；增加创建共享歌单的用法 [#1402](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1402)
+
+- 新增最近播放-歌曲,最近播放-视频,最近播放-声音,最近播放-歌单,最近播放-专辑,最近播放-播客等接口
+
+### 4.1.1 | 2021.11.20
+
+- 添加乐签信息接口 [#1365](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1365)
+
+### 4.1.0 | 2021.11.20
+
+- 修复新版评论返回参数错误问题 [#1393](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1393) [#1377](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1377)
+
+- 新增获取歌单所有歌曲的 API [#1397](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1397)
+
+- 新增发送文本动态接口, 获取客户端歌曲下载链接 url 接口 [#1391](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1391)
 
 ### 4.0.23 | 2021.9.15
 
 - 修复文件上传设置问题 [#1355](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1355)
 
-- 修复interface不完整问题 [#1356](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1356)
+- 修复 interface 不完整问题 [#1356](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1356)
 
 ### 4.0.22 | 2021.9.08
 

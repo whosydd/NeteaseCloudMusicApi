@@ -1,14 +1,12 @@
-// 分享歌曲到动态
+// 签到进度
 
 module.exports = (query, request) => {
   const data = {
-    type: query.type || 'song', // song,playlist,mv,djprogram,djradio,noresource
-    msg: query.msg || '',
-    id: query.id || '',
+    moduleId: query.moduleId || '1207signin-1207signin',
   }
   return request(
     'POST',
-    `https://music.163.com/weapi/share/friends/resource`,
+    `https://music.163.com/weapi/act/modules/signin/v2/progress`,
     data,
     {
       crypto: 'weapi',
