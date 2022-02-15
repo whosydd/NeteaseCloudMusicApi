@@ -1,0 +1,42 @@
+name: forked sync with upstream
+
+on:
+  schedule:
+    - cron:  '00 00 */3 * *'
+    # 每3天执行一次
+
+  workflow_dispatch:  # 手动执行
+
+jobs:
+  sync_latest_from_upstream:
+    runs-on: ubuntu-latest
+    name: Sync latest commits from upstream repo
+
+    steps:
+    - name: Checkout target repo
+      uses: actions/checkout@v2
+      with:
+        # 设置检查的分支
+        ref:  master
+
+    - name: Sync upstream changes
+      id: sync
+      uses: aormsby/Fork-Sync-With-Upstream-action@v3.0
+      with:
+        target_sync_branch: master  # 本地仓库分支
+        target_repo_token: ${{ secrets.PAT_TOKEN }}   # 在secrets中添加Personal access tokens
+        upstream_sync_branch: master    # 上游仓库分支
+        upstream_sync_repo: Binaryify/NeteaseCloudMusicApi  # 上游仓库（作者/仓库）
+        upstream_pull_args: '--unshallow --tags'  # 拉取的参数
+      
+    # Step 3: Display a sample message based on the sync output var 'has_new_commits'
+    - name: New commits found
+      if: steps.sync.outputs.has_new_commits == 'true'
+      run: echo "New commits were found to sync."
+    
+    - name: No new commits
+      if: steps.sync.outputs.has_new_commits == 'false'
+      run: echo "There were no new commits."
+      
+    - name: Show value of 'has_new_commits'
+      run: echo ${{ steps.sync.outputs.has_new_commits }}
