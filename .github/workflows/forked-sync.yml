@@ -24,7 +24,7 @@ jobs:
       uses: aormsby/Fork-Sync-With-Upstream-action@v3.0
       with:
         target_sync_branch: master  # 本地仓库分支
-        target_repo_token: ${{ secrets.PAT_TOKEN }}   # 在secrets中添加Personal access tokens
+        target_repo_token: ${{ secrets.SYNC_PAT }}   # 在secrets中添加Personal access tokens
         upstream_sync_branch: master    # 上游仓库分支
         upstream_sync_repo: Binaryify/NeteaseCloudMusicApi  # 上游仓库（作者/仓库）
         upstream_pull_args: '--unshallow --tags'  # 拉取的参数
